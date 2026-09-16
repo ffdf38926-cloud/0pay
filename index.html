@@ -1,368 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0pay | Next-Gen Digital Fintech & Banking Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>0pay - Banking for the new भारत | Digital Financial Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #0a0f1d;
-            --bg-card: #131b2e;
-            --accent-cyan: #00f2fe;
-            --accent-blue: #4facfe;
-            --accent-purple: #7f00ff;
-            --text-main: #f1f5f9;
-            --text-sub: #94a3b8;
-            --border-glow: rgba(0, 242, 254, 0.2);
+            --brand-orange: #FF6B00;
+            --brand-navy: #0C1E5B;
+            --brand-bg: #F3F5FA;
+            --text-dark: #222222;
+            --text-muted: #666666;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
+            background-color: #FFFFFF;
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* HEADER & NAVIGATION */
+        /* HEADER */
         header {
-            background: rgba(10, 15, 29, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 18px 6%;
+            background: #FFFFFF;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .logo {
-            font-size: 30px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            background: var(--brand-navy);
+            color: #FFF;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 800;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--brand-navy);
             letter-spacing: -0.5px;
         }
 
-        nav {
+        .logo-text span {
+            color: var(--brand-orange);
+        }
+
+        .tagline-badge {
+            border-left: 2px solid #DDD;
+            padding-left: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--brand-navy);
+        }
+
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 12px;
         }
 
-        nav a {
-            color: var(--text-sub);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .btn-portal {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #000;
-            padding: 10px 22px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
+        .btn-login {
+            background: var(--brand-navy);
+            color: white;
             border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
             transition: 0.3s;
         }
 
-        .btn-portal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+        .btn-login:hover {
+            background: var(--brand-orange);
         }
 
         .btn-admin {
-            background: linear-gradient(135deg, #e11d48, #e11d48);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
+            background: var(--brand-orange);
+            color: white;
             border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+        }
+
+        .menu-toggle {
+            background: var(--brand-orange);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
         }
 
         /* HERO SECTION */
         .hero {
-            padding: 90px 6% 60px;
+            background: var(--brand-bg);
+            padding: 40px 5% 60px;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.15), transparent 60%);
+            background-image: radial-gradient(#CCD5AE 1px, transparent 1px);
+            background-size: 20px 20px;
         }
 
-        .tagline {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(0, 242, 254, 0.1);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 20px;
-            color: var(--accent-cyan);
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+        .hero-graphic {
+            position: relative;
+            max-width: 380px;
+            margin: 0 auto 30px;
         }
+
+        .hero-avatar {
+            width: 220px;
+            height: 220px;
+            background: #E2E8F0;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-bubble {
+            position: absolute;
+            background: white;
+            padding: 10px 14px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brand-navy);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bubble-1 { top: 10px; left: 10px; }
+        .bubble-2 { top: 20px; right: 10px; }
+        .bubble-3 { bottom: 20px; left: 0px; }
+        .bubble-4 { bottom: 10px; right: 0px; }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 800;
+            color: var(--brand-orange);
             line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #555555;
+            margin-bottom: 5px;
+        }
+
+        .hero h3 {
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--brand-navy);
             margin-bottom: 20px;
-            background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            color: var(--text-sub);
-            font-size: 18px;
-            max-width: 650px;
-            margin: 0 auto 35px;
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0 auto 25px;
             line-height: 1.6;
         }
 
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+        .cta-btn {
+            background: var(--brand-navy);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(12, 30, 91, 0.3);
         }
 
         /* SERVICES SECTION */
-        .section {
-            padding: 70px 6%;
-        }
-
-        .section-header {
+        .services-section {
+            padding: 60px 5%;
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .section-header h2 {
-            font-size: 34px;
+        .section-title {
+            font-size: 30px;
             font-weight: 800;
+            color: var(--brand-navy);
             margin-bottom: 10px;
         }
 
-        .section-header p {
-            color: var(--text-sub);
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 15px;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
         .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 30px 25px;
-            border-radius: 20px;
+            background: #FFFFFF;
+            border: 1px solid #EAEAEA;
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--brand-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.1);
         }
 
-        .icon-box {
+        .card-icon {
             width: 60px;
             height: 60px;
-            background: rgba(0, 242, 254, 0.1);
-            border-radius: 15px;
+            background: #FFF3EB;
+            color: var(--brand-orange);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--accent-cyan);
+            margin: 0 auto 15px;
         }
 
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+        .card h4 {
+            font-size: 18px;
+            color: var(--brand-navy);
+            margin-bottom: 10px;
         }
 
         .card p {
-            color: var(--text-sub);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
-        .card-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .card-btn {
+            background: var(--brand-orange);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
         }
 
-        /* USER ROLES SECTION */
+        /* PARTNER ROLES */
+        .roles-section {
+            background: var(--brand-bg);
+            padding: 60px 5%;
+        }
+
         .role-card {
-            background: linear-gradient(180deg, rgba(19, 27, 46, 1) 0%, rgba(10, 15, 29, 1) 100%);
-            border-top: 3px solid var(--accent-cyan);
+            background: white;
+            border-top: 4px solid var(--brand-navy);
         }
 
-        .badge {
-            background: rgba(0, 242, 254, 0.15);
-            color: var(--accent-cyan);
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        /* MODAL (LOGIN POPUP) */
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
             z-index: 2000;
             align-items: center;
             justify-content: center;
         }
 
         .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-cyan);
-            padding: 40px;
-            border-radius: 24px;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
             width: 90%;
-            max-width: 450px;
+            max-width: 420px;
             position: relative;
-            box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
         }
 
         .close-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            color: var(--text-sub);
+            top: 15px; right: 20px;
             font-size: 24px;
             cursor: pointer;
-        }
-
-        .tab-group {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 4px;
-            margin-bottom: 25px;
-        }
-
-        .tab-btn {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            background: transparent;
-            color: var(--text-sub);
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 13px;
-        }
-
-        .tab-btn.active {
-            background: var(--accent-cyan);
-            color: #000;
+            color: #888;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
             font-size: 13px;
-            color: var(--text-sub);
+            font-weight: 600;
+            color: var(--brand-navy);
+            margin-bottom: 5px;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: #fff;
+            padding: 10px 12px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
             outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--accent-cyan);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            padding: 12px;
+            background: var(--brand-orange);
+            color: white;
             border: none;
-            border-radius: 10px;
-            color: #000;
-            font-weight: 800;
-            font-size: 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
         }
 
-        /* FOOTER */
         footer {
-            background: #050811;
-            padding: 40px 6%;
+            background: var(--brand-navy);
+            color: white;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-sub);
+            padding: 25px;
             font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
         }
     </style>
 </head>
@@ -370,213 +384,181 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">0pay</div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#hierarchy">Partner Roles</a>
-            <a href="#about">About</a>
-            <button class="btn-portal" onclick="openModal('user')">Partner Login</button>
-            <button class="btn-admin" onclick="openModal('admin')">🔒 Admin Panel</button>
-        </nav>
+        <div class="logo-container">
+            <div class="logo-box">
+                <div class="logo-icon">₹</div>
+                <div class="logo-text">0<span>pay</span></div>
+            </div>
+            <div class="tagline-badge">सबसे इजी</div>
+        </div>
+
+        <div class="header-actions">
+            <button class="btn-login" onclick="openModal('user')">Login</button>
+            <button class="btn-admin" onclick="openModal('admin')">🔒 Admin</button>
+            <div class="menu-toggle" onclick="openModal('user')">☰</div>
+        </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <span class="tagline">⚡ Next-Gen B2B & B2C Banking Portal</span>
-        <h1>Empowering Rural & Urban Digital Payments</h1>
-        <p>Instant Money Transfer, AePS Cash Withdrawal, Utility Bills, PAN Cards, and Multi-Tier Commission Management in one platform.</p>
-        <div class="hero-btns">
-            <button class="btn-portal" onclick="openModal('user')">Join As Partner</button>
-            <button class="btn-portal" style="background: transparent; color: #fff; border: 1px solid var(--accent-cyan);" onclick="openModal('admin')">Admin Control Center</button>
+        <div class="hero-graphic">
+            <div class="hero-avatar">👨‍💼</div>
+            <div class="feature-bubble bubble-1">💳 PAN Card</div>
+            <div class="feature-bubble bubble-2">📲 UPI / QR</div>
+            <div class="feature-bubble bubble-3">🏧 AePS Cash</div>
+            <div class="feature-bubble bubble-4">💸 DMT Transfer</div>
         </div>
+
+        <h1>Banking</h1>
+        <h2>for the new</h2>
+        <h3>भारत.</h3>
+
+        <p>Almost all the business verticals throughout the nation are becoming digital. Be a part of this digital revolution today with 0pay.</p>
+
+        <button class="cta-btn" onclick="openModal('user')">Get Started Now</button>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="section" id="services">
-        <div class="section-header">
-            <h2>Digital Financial Services</h2>
-            <p>Fast, Secure & High Commission Banking API Solutions</p>
-        </div>
+    <section class="services-section">
+        <h2 class="section-title">Hamari Digital Services</h2>
+        <p class="section-subtitle">Ek hi portal par paayein sabhi banking aur payment services</p>
+
         <div class="grid-container">
-            
             <div class="card">
-                <div class="icon-box">💸</div>
-                <h3>Money Transfer (DMT)</h3>
-                <p>24x7 IMPS/NEFT Money Transfer to any Indian Bank account with lowest charges.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Transfer Now &rarr;</a>
+                <div class="card-icon">💸</div>
+                <h4>Money Transfer (DMT)</h4>
+                <p>24x7 Instant money transfer to any bank account across India.</p>
+                <button class="card-btn" onclick="openModal('user')">Transfer Now</button>
             </div>
 
             <div class="card">
-                <div class="icon-box">🏧</div>
-                <h3>AePS Cash Withdrawal</h3>
-                <p>Aadhaar Biometric Cash Withdrawal, Mini-Statement & Balance Inquiry services.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Withdraw Cash &rarr;</a>
+                <div class="card-icon">🏧</div>
+                <h4>AePS Cash Withdrawal</h4>
+                <p>Aadhaar Card aur Fingerprint se cash nikalein aur balance check karein.</p>
+                <button class="card-btn" onclick="openModal('user')">Withdraw Cash</button>
             </div>
 
             <div class="card">
-                <div class="icon-box">💳</div>
-                <h3>Instant PAN Card</h3>
-                <p>Apply new PAN card or correction via NSDL/UTI direct biometric e-KYC.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Apply PAN &rarr;</a>
+                <div class="card-icon">💳</div>
+                <h4>PAN Card Apply</h4>
+                <p>Instant NSDL / UTI PAN card application and biometric e-KYC.</p>
+                <button class="card-btn" onclick="openModal('user')">Apply PAN</button>
             </div>
 
             <div class="card">
-                <div class="icon-box">📱</div>
-                <h3>Mobile & DTH Recharge</h3>
-                <p>Instant recharge with highest commission rates on Jio, Airtel, Vi & DTH operators.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Recharge &rarr;</a>
+                <div class="card-icon">📱</div>
+                <h4>Recharge & Utility Bills</h4>
+                <p>Mobile, DTH, Bijli, Water aur Gas bill payments instantly karein.</p>
+                <button class="card-btn" onclick="openModal('user')">Pay Bills</button>
             </div>
-
-            <div class="card">
-                <div class="icon-box">💡</div>
-                <h3>Electricity & Utility Bills</h3>
-                <p>Pay BBPS Utility bills like Electricity, Gas, Water & Broadband instantly.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Pay Bills &rarr;</a>
-            </div>
-
-            <div class="card">
-                <div class="icon-box">🛡️</div>
-                <h3>Insurance & Credit</h3>
-                <p>General insurance, vehicle policies, and quick merchant loan options.</p>
-                <a href="javascript:void(0)" onclick="openModal('user')" class="card-link">Explore &rarr;</a>
-            </div>
-
         </div>
     </section>
 
-    <!-- HIERARCHY / USER ROLES SECTION -->
-    <section class="section" id="hierarchy" style="background: rgba(255,255,255,0.01);">
-        <div class="section-header">
-            <h2>Fintech Business Partnership Roles</h2>
-            <p>Choose your level and earn continuous recurring commissions</p>
-        </div>
+    <!-- ROLES HIERARCHY SECTION -->
+    <section class="roles-section">
+        <h2 class="section-title" style="text-align: center;">Partner Hierarchy Roles</h2>
+        <p class="section-subtitle" style="text-align: center;">Apna business chunayein aur high commission kamayein</p>
+
         <div class="grid-container">
-            
             <div class="card role-card">
-                <span class="badge">Earn Daily</span>
-                <h3>🏪 Retailer</h3>
-                <p>Serve customers at shop, provide AePS, DMT, Bill payments and get instant commissions per transaction.</p>
-                <button class="btn-portal" style="width: 100%;" onclick="openModal('user')">Login / Join Retailer</button>
+                <h4>🏪 Retailer</h4>
+                <p>Dukaan par sabhi banking services dein aur har transaction par commission paayein.</p>
+                <button class="card-btn" style="background: var(--brand-navy);" onclick="openModal('user')">Join Retailer</button>
             </div>
 
             <div class="card role-card">
-                <span class="badge">Network Growth</span>
-                <h3>🤝 Distributor</h3>
-                <p>Create & manage unlimited Retailers in your local region. Earn auto-overriding commission.</p>
-                <button class="btn-portal" style="width: 100%;" onclick="openModal('user')">Join Distributor</button>
+                <h4>🤝 Distributor</h4>
+                <p>Apne area mein Retailers onboarding karein aur lifelong overriding income paayein.</p>
+                <button class="card-btn" style="background: var(--brand-navy);" onclick="openModal('user')">Join Distributor</button>
             </div>
 
             <div class="card role-card">
-                <span class="badge">District Head</span>
-                <h3>🏢 Super Distributor</h3>
-                <p>Manage multiple Distributors, control commission slabs, and scale business exponentially.</p>
-                <button class="btn-portal" style="width: 100%;" onclick="openModal('user')">Join Super Dist.</button>
+                <h4>🏢 Super Distributor</h4>
+                <p>District level network lead karein aur high commission margins enjoy karein.</p>
+                <button class="card-btn" style="background: var(--brand-navy);" onclick="openModal('user')">Join Super Dist.</button>
             </div>
 
             <div class="card role-card">
-                <span class="badge">State Level</span>
-                <h3>👑 Master Distributor</h3>
-                <p>High Margin ID creation rights, unlimited distributor/retailer tree management.</p>
-                <button class="btn-portal" style="width: 100%;" onclick="openModal('user')">Join Master Dist.</button>
+                <h4>👑 Master Distributor</h4>
+                <p>Unlimited ID creation rights ke saath master level business run karein.</p>
+                <button class="card-btn" style="background: var(--brand-navy);" onclick="openModal('user')">Join Master Dist.</button>
             </div>
 
-            <div class="card role-card" style="border-top-color: #e11d48;">
-                <span class="badge" style="background: rgba(225,29,72,0.2); color:#e11d48;">Management</span>
-                <h3>💼 Sales Manager</h3>
-                <p>Field sales monitoring, team performance tracking, client onboarding, and targets management.</p>
-                <button class="btn-admin" style="width: 100%;" onclick="openModal('user')">Sales Portal</button>
+            <div class="card role-card" style="border-top-color: var(--brand-orange);">
+                <h4>💼 Sales Manager</h4>
+                <p>Sales team management, target tracking aur multi-tier support control karein.</p>
+                <button class="card-btn" onclick="openModal('user')">Sales Portal</button>
             </div>
-
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 0pay Fintech Solutions. All Rights Reserved. Powered by High-Speed Secure Banking API Engine.</p>
+        <p>&copy; 2026 0pay Digital Financial Services. All Rights Reserved.</p>
     </footer>
 
-    <!-- LOGIN / REGISTER MODAL -->
+    <!-- LOGIN MODAL -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            
-            <div class="tab-group">
-                <button class="tab-btn active" id="userTabBtn" onclick="switchTab('user')">Partner Login</button>
-                <button class="tab-btn" id="adminTabBtn" onclick="switchTab('admin')">Admin Panel</button>
-            </div>
+            <h3 id="modalTitle" style="color: var(--brand-navy); margin-bottom: 20px;">Partner Login</h3>
 
-            <h2 id="modalTitle" style="margin-bottom: 20px; font-size: 22px;">Welcome Back to 0pay</h2>
-
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="form-group" id="roleSelectGroup">
-                    <label>Select User Role</label>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group" id="roleGroup">
+                    <label>Select Your Role</label>
                     <select id="userRole">
-                        <option value="retailer">Retailer ID</option>
-                        <option value="distributor">Distributor ID</option>
-                        <option value="super_distributor">Super Distributor ID</option>
-                        <option value="master_distributor">Master Distributor ID</option>
-                        <option value="sales_manager">Sales Manager</option>
+                        <option>Retailer</option>
+                        <option>Distributor</option>
+                        <option>Super Distributor</option>
+                        <option>Master Distributor</option>
+                        <option>Sales Manager</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Mobile Number / User ID</label>
-                    <input type="text" id="username" placeholder="Enter ID or Registered Mobile" required>
+                    <label>User ID / Mobile Number</label>
+                    <input type="text" placeholder="Enter Registered ID" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Password / Pin</label>
-                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter Password" required>
                 </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn">Access Secure Portal</button>
+                <button type="submit" class="submit-btn" id="modalSubmitBtn">Login To Portal</button>
             </form>
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR INTERACTION -->
     <script>
         function openModal(type) {
-            document.getElementById('loginModal').style.display = 'flex';
-            switchTab(type);
+            const modal = document.getElementById('loginModal');
+            const title = document.getElementById('modalTitle');
+            const roleGroup = document.getElementById('roleGroup');
+            const submitBtn = document.getElementById('modalSubmitBtn');
+
+            modal.style.display = 'flex';
+
+            if(type === 'admin') {
+                title.innerText = '🔒 Admin Control Console';
+                roleGroup.style.display = 'none';
+                submitBtn.style.background = 'var(--brand-navy)';
+            } else {
+                title.innerText = '0pay Partner Login';
+                roleGroup.style.display = 'block';
+                submitBtn.style.background = 'var(--brand-orange)';
+            }
         }
 
         function closeModal() {
             document.getElementById('loginModal').style.display = 'none';
         }
 
-        function switchTab(type) {
-            const userTabBtn = document.getElementById('userTabBtn');
-            const adminTabBtn = document.getElementById('adminTabBtn');
-            const roleSelectGroup = document.getElementById('roleSelectGroup');
-            const modalTitle = document.getElementById('modalTitle');
-            const submitBtn = document.getElementById('submitBtn');
-
-            if(type === 'admin') {
-                adminTabBtn.classList.add('active');
-                userTabBtn.classList.remove('active');
-                roleSelectGroup.style.display = 'none';
-                modalTitle.innerText = 'Admin Control Console';
-                submitBtn.innerText = 'Login to Admin Panel';
-                submitBtn.style.background = 'linear-gradient(135deg, #e11d48, #be123c)';
-                submitBtn.style.color = '#fff';
-            } else {
-                userTabBtn.classList.add('active');
-                adminTabBtn.classList.remove('active');
-                roleSelectGroup.style.display = 'block';
-                modalTitle.innerText = 'Partner Login';
-                submitBtn.innerText = 'Access Secure Portal';
-                submitBtn.style.background = 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))';
-                submitBtn.style.color = '#000';
-            }
+        function handleLogin(e) {
+            e.preventDefault();
+            alert('Redirecting to 0pay Portal Dashboard...');
+            closeModal();
         }
-
-        function handleLogin(event) {
-            event.preventDefault();
-            const isAdmin = document.getElementById('adminTabBtn').classList.contains('active');
-            const user = document.getElementById('username').value;
-            
-            if(isAdmin) {
-                alert(`Welcome Admin (${user})! Accessing 0pay Master Control Panel...`);
-            } else {
-                const role =
+    </script>
+</body>
+</html>
